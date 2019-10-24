@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--FontAwesome icons link-->
+    <script src="https://kit.fontawesome.com/d3d481a13c.js"></script>
+    <title>Customer List</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--container-fluid-->
+        <div class="row">
+            <!--row1-->
+            <div class="col-md-12">
+                <!--col-12-->
+                <h3>Customer List
+                    <button type="button" class="btn btn-primary"
+                        onclick="document.getElementById('id01').style.display='block'">Add New</button></h3>
+                <hr>
+                <div id="message"></div>
+                <center>
+                    <div class="col-md-4">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+                            title="Type in a name">
+                    </div>
+                </center>
+                <hr>
+                <div id="id01" class="modal">
+                    <!--modal-->
+
+                    <form class="modal-content animate" id="customerForm">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                title="Close Modal">&times;</span>
+                        </div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Customer</h4>
+                        </div>
+
+                        <div class="container">
+                            <!--container-->
+                            <div class="row">
+                                <!--row 1-->
+                                <div class="col-md-8">
+                                    <!--col-->
+                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                    <label><b><i class="fas fa-user"></i> Name</b></label>
+                                    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+                                    <label><b><i class="fas fa-envelope"></i> Email</b></label>
+                                    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                                    <center><button type="submit">Add</button></center>
+                                    <img id="drag1" src="image/avatar.jpg" draggable="true" ondragstart="drag(event)"
+                                        width="70" height="70">
+                                </div><!--End of col-->
+                            </div>
+                            <!--End of row1-->
+                        </div>
+                        <!--End of container-->
+                </div>
+                <!--End of Modal-->
+                </form>
+        </div>
+        <!--End of col 12-->
+    </div>
+    <!--End of row1 -->
+    <div class="row">
+        <!--row2-->
+        <div class="col-md-6">
+            <!--col-->
+            <div>
+                <ul id="customerList"></ul>
+            </div>
+        </div>
+        <!--end of col-->
+        <div class="col-md-6">
+            <!--col-->
+            <div id="customerDetail"></div>
+        </div>
+        <!--end of col-->
+    </div>
+    <!--End of row2-->
+    </div>
+    <!--End of container-fluid-->
+
+    <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
